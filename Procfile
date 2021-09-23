@@ -1,1 +1,1 @@
-web: gunicorn noticeboard.wsgi --log-file -
+web: gunicorn noticeboard.wsgi
