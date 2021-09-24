@@ -59,14 +59,14 @@
              <a href="{% url 'password_reset' %}">Reset Password</a>
           </div><!-- /.col -->
             <div class="col-12 text-center">
-             <a href="{% url 'signup_admin' %}">Admin Signup</a>
-          </div><!-- /.col -->
+             {% comment %} <a href="{% url 'signup_admin' %}">Admin Signup</a>
+          </div><!-- /.col --> {% endcomment %}
                         <div class="col-12 text-center">
              <a href="{% url 'signup_staff' %}">Staff Signup</a>
           </div><!-- /.col -->
-                                    <div class="col-12 text-center">
+                                    {% comment %} <div class="col-12 text-center">
              <a href="{% url 'signup_student' %}">Student Signup</a>
-          </div><!-- /.col -->
+          </div><!-- /.col --> {% endcomment %}
         </div>
         <div class="row">
           {% if messages %}
