@@ -4,7 +4,7 @@ from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
-from staffboard import views, StaffViews, HodViews, StudentViews
+from staffboard import views, StaffViews, HodViews
 from staffboard.EditResultVIewClass import EditResultViewClass
 from noticeboard import settings
 
