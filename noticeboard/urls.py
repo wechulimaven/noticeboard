@@ -4,7 +4,7 @@ from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
-from staffboard import views, StaffViews, HodViews
+from staffboard import views, StaffViews, HodViews, StudentViews
 from staffboard.EditResultVIewClass import EditResultViewClass
 from noticeboard import settings
 
@@ -41,11 +41,11 @@ urlpatterns = [
     # path('add_student', HodViews.add_student,name="add_student"),
     # path('add_student_save', HodViews.add_student_save,name="add_student_save"),
 
-    # path('add_course/', HodViews.add_course,name="add_course"),
-    # path('add_course_save', HodViews.add_course_save,name="add_course_save"),
+    path('add_course/', HodViews.add_course,name="add_course"),
+    path('add_course_save', HodViews.add_course_save,name="add_course_save"),
 
-    # path('add_subject', HodViews.add_subject,name="add_subject"),
-    # path('add_subject_save', HodViews.add_subject_save,name="add_subject_save"),
+    path('add_subject', HodViews.add_subject,name="add_subject"),
+    path('add_subject_save', HodViews.add_subject_save,name="add_subject_save"),
 
     path('staff_profile', StaffViews.staff_profile, name="staff_profile"),
     path('staff_profile_save', StaffViews.staff_profile_save, name="staff_profile_save"),
@@ -86,8 +86,8 @@ urlpatterns = [
 
     # path('edit_student/<str:student_id>', HodViews.edit_student,name="edit_student"),
     # path('edit_student_save', HodViews.edit_student_save,name="edit_student_save"),
-    # path('edit_subject/<str:subject_id>', HodViews.edit_subject,name="edit_subject"),
-    # path('edit_subject_save', HodViews.edit_subject_save,name="edit_subject_save"),
+    path('edit_subject/<str:subject_id>', HodViews.edit_subject,name="edit_subject"),
+    path('edit_subject_save', HodViews.edit_subject_save,name="edit_subject_save"),
     # path('edit_course/<str:course_id>', HodViews.edit_course,name="edit_course"),
     # path('edit_course_save', HodViews.edit_course_save,name="edit_course_save"),
     
@@ -133,8 +133,8 @@ urlpatterns = [
     # path('save_student_result', StaffViews.save_student_result, name="save_student_result"),
     # path('edit_student_result',EditResultViewClass.as_view(), name="edit_student_result"),
     # path('fetch_result_student',StaffViews.fetch_result_student, name="fetch_result_student"),
-    # path('start_live_classroom',StaffViews.start_live_classroom, name="start_live_classroom"),
-    # path('start_live_classroom_process',StaffViews.start_live_classroom_process, name="start_live_classroom_process"),
+    path('start_live_classroom',StaffViews.start_live_classroom, name="start_live_classroom"),
+    path('start_live_classroom_process',StaffViews.start_live_classroom_process, name="start_live_classroom_process"),
 
 
     # path('student_home', StudentViews.student_home, name="student_home"),
@@ -150,7 +150,7 @@ urlpatterns = [
     # path('firebase-messaging-sw.js',views.showFirebaseJS,name="show_firebase_js"),
     # path('student_all_notification',StudentViews.student_all_notification,name="student_all_notification"),
     # path('student_view_result',StudentViews.student_view_result,name="student_view_result"),
-    # path('join_class_room/<int:subject_id>/<int:session_year_id>',StudentViews.join_class_room,name="join_class_room"),
+    path('join_class_room/<int:subject_id>/<int:session_year_id>',StudentViews.join_class_room,name="join_class_room"),
     # path('node_modules/canvas-designer/widget.html',StaffViews.returnHtmlWidget,name="returnHtmlWidget"),
     # path('testurl/',views.Testurl)
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
