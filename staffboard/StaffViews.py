@@ -310,6 +310,7 @@ def start_live_classroom(request):
     session_years=SessionYearModel.object.all()
     return render(request,"staff_template/start_live_classroom.html",{"subjects":subjects,"session_years":session_years})
 
+
 def start_live_classroom_process(request):
     session_year=request.POST.get("session_year")
     subject=request.POST.get("subject")

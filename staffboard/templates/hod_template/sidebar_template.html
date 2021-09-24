@@ -72,7 +72,7 @@
               </p>
             </a>
           </li> {% endcomment %}
-           <li class="nav-item">
+           {% comment %} <li class="nav-item">
             {% url 'add_course' as add_course %}
             <a href="{% url 'add_course' %}" class="nav-link {% if request.path == add_course %} active {% endif %}">
               <i class="nav-icon fas fa-plus-circle"></i>
@@ -90,8 +90,8 @@
                 Manage Course
               </p>
             </a>
-          </li> 
-           <li class="nav-item">
+          </li>  {% endcomment %}
+           {% comment %} <li class="nav-item">
             {% url 'add_subject' as add_subject %}
             <a href="{% url 'add_subject' %}" class="nav-link {% if request.path == add_subject %} active {% endif %}">
               <i class="nav-icon fas fa-plus-circle"></i>
@@ -118,7 +118,7 @@
                 Manage Session Year
               </p>
             </a>
-          </li>
+          </li> {% endcomment %}
 
            {% comment %} <li class="nav-item">
              {% url 'student_feedback_message' as student_feedback_message %}
